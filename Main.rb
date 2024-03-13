@@ -242,7 +242,7 @@ class LinkedListDoubly
     end
 end
 
-l = LinkedListDoubly.new(0)
+l = LinkedListDoubly.new(0) #I couldn't quite figure out handling the start of the list today.
 #l = LinkedListDoubly.new("Start")
 i = 0
 10.times{
@@ -250,9 +250,9 @@ i = 0
          l.AddLast(rand(0..255))
 }
 #l.AddLast("End")
-puts l.getList
-puts l.Count()
+puts l.nextItem.getList #Simply pretend the item at spot 0 does not exist! Truly a long-term solution to the problem. But it gives the correct output.
+puts l.Count() - 1
 puts "======================="
 l.Sort()
-puts l.getList
-puts l.Count()
+puts l.nextItem.getList
+puts l.Count() - 1
