@@ -217,7 +217,7 @@ class LinkedListDoubly
         smallest = Float::INFINITY  #Smallest item should be initially infinity, so any number is smaller
         #iterate through rest of list to find anything smaller than this
         checking = @nextItem
-        while !checking.nextItem.nil?
+        while !checking.nil?
             if checking.data < smallest
                 smallest = checking.data
             end
@@ -225,9 +225,10 @@ class LinkedListDoubly
         end
         #Find index of the item
         if @nextItem.nextItem == nil
-            removalIndex = 1
-            RemoveItemAt(removalIndex)
-
+            #smallest = @nextItem.data
+            #removalIndex = 1
+            #RemoveItemAt(removalIndex)
+            @nextItem.Sort()
             return
         else
         removalIndex = Find(smallest)
@@ -249,5 +250,9 @@ i = 0
          l.AddLast(rand(0..255))
 }
 #l.AddLast("End")
+puts l.getList
+puts l.Count()
+puts "======================="
 l.Sort()
 puts l.getList
+puts l.Count()
